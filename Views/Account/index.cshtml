@@ -1,0 +1,36 @@
+@{
+  layout = null
+}
+@model MvcLogin.ViewModels.AccountViewModel
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta name="Viewport" content="Width=device-width" />
+      <title>Index</title>
+    </head>
+
+    <body>
+      @using(Html.BeginForm("Login", "Account"))
+      {
+        /*For incorrect Passwords*/
+        @Viewbag.Error
+        <table cellpadding="2" cellspacing="2">
+        <tr>
+          /*Text Box For the Username */
+          <td>@Html.LabelFor(model => model.account.Username)</label></td>
+          <td>@Html.TextBoxFor(model => model.account.Username)</td>
+        </tr>
+        <tr>
+          /*Text Box For the Password */
+          <td>@Html.LabelFor(model => model.account.Password)</td>
+          <td>@Html.TextBoxFor(model => model.account.Password)</td>
+        </tr>
+        <tr>
+          /*The submit button*/
+          <td>&nbsp;</td>
+          <td><input type="submit" value="Login" /></td>
+        </tr>
+        </table>
+      }
+    </body
+  </html>
